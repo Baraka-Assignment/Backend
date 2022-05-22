@@ -46,13 +46,27 @@ const createUser = (request, response) => {
       if (error) {
         throw error;
       }
-      response.status(201).send(`User added with ID: ${result.insertId}`);
+      response.status(201).send(`User added`);
     }
   );
 };
+
+// delete user, given ID
+const deleteUser = (request, response) => {
+    const id = parseInt(request.params.id);
+
+    pool.query("DELETE FROM users WHERE id = $1", [id], (error, results) => {
+        if (error) {
+            throw error;
+        }
+        response.status(200).send(`User deleted with ID: ${id}`);
+    });
+};
+
 
 module.exports = {
   createUser,
   getUsers,
   updateUser,
+  deleteUser
 };
