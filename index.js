@@ -10,6 +10,9 @@ app.get('/', (request, response) => {
     response.json({ info: 'Baraka Dashboard API' })
 })
 
+// initlize user routes
+app.get('/users', db.getUsers)
+
 // start app
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
