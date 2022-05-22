@@ -12,6 +12,7 @@ app.get('/', (request, response) => {
 
 // initlize user routes
 app.get('/users', db.getUsers)
+app.put('/users/:id/:firstname/:lastname', db.updateUser)
 
 // start app
 app.listen(port, () => {
