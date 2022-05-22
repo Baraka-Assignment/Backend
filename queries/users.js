@@ -1,9 +1,9 @@
 const Pool = require("pg").Pool;
 const pool = new Pool({
-  user: "me",
+  user: "baraka",
   host: "localhost",
   database: "api",
-  password: "password",
+  password: "baraka",
   port: 5432,
 });
 
@@ -48,6 +48,10 @@ const updateUser = (request, response) => {
     }
   );
 };
+
+
+
+
 
 // create user
 const createUser = (request, response) => {
