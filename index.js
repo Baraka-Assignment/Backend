@@ -21,6 +21,7 @@ app.get('/', (request, response) => {
 // initlize user routes
 app.post('/users', db.createUser)
 app.get('/users', db.getUsers)
+app.get('/users/:id', db.getUserById)
 app.put('/users/:id/:firstname/:lastname', db.updateUser)
 app.delete('/users/:id', db.deleteUser)
 
